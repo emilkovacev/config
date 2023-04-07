@@ -1,0 +1,59 @@
+" view
+colorscheme pablo
+
+" code behavior
+syntax on
+set title
+set number
+
+" tabs
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" indentation
+filetype indent on
+set smartindent
+autocmd BufRead,BufWritePre *.sh normal gg=G
+set nowrap
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" split-view style
+" set fillchars+=vert:\ 
+
+" omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+
+" clipboard
+set clipboard=unnamedplus
+set mouse=a
+
+" Coc highlighting
+" highlight CocFloating ctermbg=darkgrey ctermfg=white
+
+" file autoreload
+set autoread                                                                                                                                                                                    
+au CursorHold * checktime
+
+" alias
+:command JSON "'<,'>!python -m json.tool"
+
+" spellcheck
+autocmd BufNewFile,BufRead *.md set spell
+
+set backupdir=~/.vim/swap//
+set directory=~/.vim/swap//
+
+" NerdTree
+autocmd FileType nerdtree nmap <buffer> <left> u
+autocmd FileType nerdtree nmap <buffer> <right> C
+
+colorscheme default
