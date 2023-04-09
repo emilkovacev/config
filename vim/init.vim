@@ -1,6 +1,5 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
 source ~/.vimrc
+
 
 " -- Plugins --
 
@@ -15,8 +14,10 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'ishan9299/modus-theme-vim'
 
-" If you have nodejs and yarn
+" Requires nodejs and yarn
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 call plug#end()
@@ -36,3 +37,6 @@ hi CocInfoFloat guifg=#ffffff guibg=#000000
 hi CocErrorFloat guifg=#ffffff guibg=#000000
 hi CocWarningFloat guifg=#ffffff guibg=#000000
 hi CocHintFloat guifg=#ffffff guibg=#000000
+
+" Modus Theme Config
+" colorscheme modus-vivendi -- Dark
