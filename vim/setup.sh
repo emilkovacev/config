@@ -5,7 +5,7 @@ INIT_FILE=init.vim
 VIMRC=vimrc
 
 # Insert NVIM config
-if [[ -d $CONFIG_DIR && (! -n $CONFIG_DIR/$INIT_FILE) ]]; then
+if [[ ! -f $CONFIG_DIR/$INIT_FILE ]]; then
     cp $INIT_FILE $CONFIG_DIR/$INIT_FILE
     echo "copied!"
 elif [[ -d $CONFIG_DIR ]]; then
