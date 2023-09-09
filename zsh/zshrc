@@ -18,6 +18,7 @@ PROMPT="%n@%m %. $ " # sets terminal prompt
 PYTHON_VERSION="3.11"
 JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+JAVA_17_HOME=$(/usr/libexec/java_home -v17)
 JAVA_HOME=JAVA_8_HOME
 
 export TERM
@@ -27,6 +28,9 @@ export GOPATH
 export JAVA_HOME
 export JAVA_8_HOME
 export JAVA_11_HOME
+export JAVA_11_HOME
+
+export AMSTERDAM="emil@192.168.1.72"
 
 
 ### ALIASES ###
@@ -42,12 +46,17 @@ alias bison="/usr/local/bin/bison"
 PATH="/bin"
 PATH="$PATH:/usr/bin"
 PATH="$PATH:/usr/local/bin"
+PATH="$PATH:/sbin"
 
 # Application Binaries #
 PATH="$PATH:/usr/local/git/bin"             # Git
 PATH="$PATH:/usr/local/mysql-shell/bin/"    # MySQL
 PATH="$PATH:$HOME/.emacs.d/bin"             # Emacs
 PATH="$PATH:$HOME/.jmeter/bin"              # Apache Jmeter
+PATH="$PATH:/usr/local/Cellar/gcc/"         # gcc
+PATH="$PATH:/usr/local/opt/binutils/bin"    # binutils
+PATH="$PATH:/usr/local/Cellar/qemu/8.1.0_3/bin" # qemu
+PATH="$PATH:/usr/local/Cellar/i386-elf-gdb/13.2/bin" # i386 gdb
 
 
 ### NVM config ###
@@ -95,6 +104,7 @@ PATH="$PATH:/Library/Frameworks/Python.framework/Versions/${PYTHON_VERSION}/bin"
 
 alias java8="export JAVA_HOME=$JAVA_8_HOME"
 alias java11="export JAVA_HOME=$JAVA_11_HOME"
+alias java17="export JAVA_HOME=$JAVA_17_HOME"
 java8 # default to Java 8
 
 
@@ -106,19 +116,7 @@ PATH="$PATH:/usr/local/go/bin"
 
 export GOPATH
 
-
-####################
-#                  #
-#       MISC       #
-#                  #
-####################
-
-### CSE220 ###
-
-function cse220_xpra {
-    xpra start --start $1 --ssh-upgrade=no --ssh=ssh ssh://emilkova@emon.cse.buffalo.edu/
-}
-
+### JS ###
 
 
 ####################
